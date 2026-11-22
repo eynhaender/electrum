@@ -126,10 +126,10 @@ class PluginDialog(WindowModalDialog):
             return
         try:
             self.window.plugins.authorize_plugin(self.name, privkey)
+            self.window.plugins.enable(self.name)
         except Exception as e:
             self.show_error(f"{e}")
             return
-        self.window.plugins.enable(self.name)
         d = self.plugins.get_metadata(self.name)
         if details := d.registers_keystore:
             self.plugins.register_keystore(self.name, details)
@@ -380,7 +380,11 @@ class PluginsDialog(WindowModalDialog, MessageBoxMixin):
         if is_enabled:
             self.plugins.disable(name)
         else:
-            self.plugins.enable(name)
+            try:
+                self.plugins.enable(name)
+            except Exception as e:
+                self.show_error(f"{e}")
+                return
         if status_button:
             status_button.update()
         if self.gui_object:
