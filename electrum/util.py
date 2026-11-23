@@ -1050,6 +1050,13 @@ testnet4_block_explorers = {
                        {'tx': 'tx/', 'addr': 'address/'}),
 }
 
+testnet5_block_explorers = {
+    'carmine.libbitcoin.net': ('https://carmine.libbitcoin.net:58143/v1/',
+                       {'tx': 'tx/', 'addr': 'address/'}),
+    'wormer.libbitcoin.net': ('https://wormer.libbitcoin.net:58143/v1/',
+                       {'tx': 'tx/', 'addr': 'address/'}),
+}
+
 signet_block_explorers = {
     'bc-2.jp': ('https://explorer.bc-2.jp/',
                         {'tx': 'tx/', 'addr': 'address/'}),
@@ -1074,6 +1081,8 @@ def block_explorer_info():
         return testnet_block_explorers
     elif constants.net.NET_NAME == "testnet4":
         return testnet4_block_explorers
+    elif constants.net.NET_NAME == "testnet5":
+        return testnet5_block_explorers
     elif constants.net.NET_NAME == "signet":
         return signet_block_explorers
     return mainnet_block_explorers
