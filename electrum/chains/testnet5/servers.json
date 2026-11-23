@@ -1,0 +1,12 @@
+{
+    "carmine.libbitcoin.net": {
+        "pruning": "-",
+        "s": "58543",
+        "version": "1.6"
+    },
+    "wormer.libbitcoin.net": {
+        "pruning": "-",
+        "s": "58543",
+        "version": "1.6"
+    }
+}

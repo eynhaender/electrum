@@ -228,6 +228,13 @@ class BitcoinTestnet4(BitcoinTestnet):
     LN_DNS_SEEDS = []
 
 
+class BitcoinTestnet5(BitcoinTestnet):
+
+    NET_NAME = "testnet5"
+    GENESIS = "00000000000008c1637e7d3252dc1c333d4546fd6fff6a474b200d674a91d497"
+    LN_DNS_SEEDS = []
+
+
 class BitcoinRegtest(BitcoinTestnet):
 
     NET_NAME = "regtest"
